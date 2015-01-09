@@ -22,3 +22,7 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_kmini3g
 PRODUCT_DEVICE := kmini3g
+
+
+# Inherit from msm8226-common
+$(call inherit-product, device/motorola/msm8226-common/msm8226.mk)
