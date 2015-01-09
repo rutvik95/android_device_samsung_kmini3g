@@ -6,7 +6,7 @@ USE_CAMERA_STUB := true
 # inherit from common msm8226-common
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/motorola/falcon
+LOCAL_PATH := device/samsung/kmini3g
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
