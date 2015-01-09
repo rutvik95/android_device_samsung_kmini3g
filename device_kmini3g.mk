@@ -17,6 +17,15 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+#init files
+PRODUCT_PACKAGES += \
+    init.qcom.rc \
+    init.qcom.ssr.sh \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc \
+    init.carrier.rc \
+    init.target.rc
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

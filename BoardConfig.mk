@@ -3,6 +3,11 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/kmini3g/BoardConfigVendor.mk
 
+# inherit from common msm8226-common
+-include device/samsung/msm8226-common/BoardConfigCommon.mk
+
+LOCAL_PATH := device/motorola/falcon
+
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := unknown
