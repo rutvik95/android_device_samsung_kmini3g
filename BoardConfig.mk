@@ -4,7 +4,7 @@ USE_CAMERA_STUB := true
 -include vendor/samsung/kmini3g/BoardConfigVendor.mk
 
 # inherit from common msm8226-common
--include device/samsung/msm8226-common/BoardConfigCommon.mk
+-include device/samsung/kmini3g/BoardConfigCommon.mk
 
 LOCAL_PATH := device/samsung/kmini3g
 
@@ -21,6 +21,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOOTLOADER_BOARD_NAME := kmini3g
 
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
