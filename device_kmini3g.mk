@@ -37,4 +37,4 @@ PRODUCT_DEVICE := kmini3g
 
 
 # Inherit from msm8226-common
-$(call inherit-product, device/motorola/msm8226-common/msm8226.mk)
+$(call inherit-product, device/samsung/kmini3g/msm8226.mk)
