@@ -79,6 +79,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_QCOM_MEDIA_VARIANT := caf-new
 
+# Custom RIL class
+BOARD_RIL_CLASS := ../../../device/samsung/kmini3g/ril/
+
 
 
 # Power
