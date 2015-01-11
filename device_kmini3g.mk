@@ -43,6 +43,11 @@ PRODUCT_COPY_FILES += \
 #media
 PRODUCT_COPY_FILES += \
 	    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
+	    
+#some prop lines(dualsim only for now)
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.radio.multisim.config=none 
+
 
 # Wifi
 PRODUCT_PACKAGES += \
