@@ -35,9 +35,29 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_kmini3g
 PRODUCT_DEVICE := kmini3g
 
-# Wifi
+#Audio
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
+
+#media
+PRODUCT_COPY_FILES += \
+	    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
+
+# Wifi
+PRODUCT_PACKAGES += \
+    hostapd.accept \
+    hostapd.deny \
+    hostapd_default.conf
+
+PRODUCT_PACKAGES += \
+    p2p_supplicant_overlay.conf \
+    wpa_supplicant_overlay.conf
+
+PRODUCT_COPY_FILES += \
+    kernel/samsung/kmini3g/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/samsung/kmini3g/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # Inherit from msm8226-common
-$(call inherit-product, device/samsung/kmini3g/msm8226.mk)
+$(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
