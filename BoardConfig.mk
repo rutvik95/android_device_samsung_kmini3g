@@ -4,7 +4,8 @@ USE_CAMERA_STUB := true
 -include vendor/samsung/kmini3g/BoardConfigVendor.mk
 
 # inherit from common msm8226-common
--include device/samsung/kmini3g/BoardConfigCommon.mk
+-include device/samsung/msm8226-common/BoardConfigCommon.mk
+
 
 LOCAL_PATH := device/samsung/kmini3g
 
@@ -26,6 +27,10 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
+
+#RIL
+# Custom RIL class
+BOARD_RIL_CLASS := ../../../device/samsung/kmini3g/ril/
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
