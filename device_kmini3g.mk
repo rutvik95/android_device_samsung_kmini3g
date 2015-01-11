@@ -5,17 +5,6 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/kmini3g/kmini3g-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/kmini3g/overlay
-
-LOCAL_PATH := device/samsung/kmini3g
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -43,6 +32,11 @@ PRODUCT_COPY_FILES += \
 #media
 PRODUCT_COPY_FILES += \
 	    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
+	    
+#some prop lines(dualsim only for now)
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.radio.multisim.config=none 
+
 
 # Wifi
 PRODUCT_PACKAGES += \
